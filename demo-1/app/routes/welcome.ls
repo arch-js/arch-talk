@@ -10,7 +10,7 @@ module.exports = class extends base-route
   get-title: -> super "Welcome!"
   render: ->
     layout do
-      d.h1 "Searchable list demo"
+      d.h1 "Searchable list"
 
       list!
 

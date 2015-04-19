@@ -2,7 +2,7 @@ require! <[ reflex ]>
 
 d = reflex.DOM
 
-module.exports = class
+module.exports = class extends React.Component
   display-name: 'layout'
 
   render: ->

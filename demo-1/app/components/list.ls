@@ -6,9 +6,16 @@ things =
   * "Hovercraft full of eels"
   * "Ex-parrot"
   * "Eggs, beans, bacon and spam"
+  * "Knights who say Ni!"
   * "Flying circus"
 
-module.exports = class
+matches = (search, item) -->
+  search is '' or item.to-lower-case!.index-of(search.to-lower-case!) > -1
+
+module.exports = class extends React.Component
+  ->
+    @state = query: ''
+
   display-name: 'list'
 
   render: ->
@@ -18,16 +25,15 @@ module.exports = class
       d.div do
         class-name: 'panel-heading'
         d.form do
-          action: '/'
-          method: 'post'
           class-name: 'form-inline'
+          on-submit: -> it.prevent-default!
 
           d.div do
             class-name: 'form-group'
 
             d.label do
               class-name: 'sr-only'
-              for: 'search-query'
+              html-for: 'search-query'
 
               "Your search"
 
@@ -35,23 +41,22 @@ module.exports = class
               type: 'text'
               class-name: 'form-control'
               id: 'search-query'
+              name: 'query'
               size: 60
               placeholder: 'Your search'
-
-          " "
-          d.button do
-            type: 'submit'
-            class-name: 'btn btn-primary'
-
-            "Search"
+              value: @state.query
+              on-change: ~> @set-state query: it.target.value
 
       d.div do
         class-name: 'panel-body'
         d.table do
           class-name: 'table table-striped'
 
-          things |> map ->
-            d.tr d.td it
+          d.tbody do
+            things
+            |> filter matches @state.query
+            |> map ->
+              d.tr d.td it
 
 
 

@@ -13,7 +13,7 @@ html = '<!doctype html>
 
 # This is a base route for convenient definition of outer layout and
 # page title. All route components inherit from this class
-module.exports = class
+module.exports = class extends React.Component
   get-layout-template: ->
     # TODO replace me with an actual template.
     # Jade is a good template engine for example.
