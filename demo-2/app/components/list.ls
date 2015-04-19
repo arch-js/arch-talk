@@ -36,12 +36,6 @@ module.exports = class extends React.Component
           d.div do
             class-name: 'form-group'
 
-            d.label do
-              class-name: 'sr-only'
-              html-for: 'search-query'
-
-              "Your search"
-
             d.input do
               type: 'text'
               class-name: 'form-control'
