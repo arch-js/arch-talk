@@ -38,18 +38,17 @@ module.exports = class List extends React.Component
 
       d.div do
         class-name: 'panel-body'
-        d.table do
-          class-name: 'table table-striped'
+        if @props.loading.deref!
+          d.p 'Loading...'
+        else
+          d.table do
+            class-name: 'table table-striped'
 
-          d.tbody do
-            @props.results |> map ->
-              d.tr do
-                d.td d.img do
-                  height: 50
-                  width: 50
-                  src: it.get('avatar').deref!
-                d.td it.get('user').deref!
-
-
-
-
+            d.tbody do
+              @props.results |> map ->
+                d.tr do
+                  d.td d.img do
+                    height: 50
+                    width: 50
+                    src: it.get('avatar').deref!
+                  d.td it.get('user').deref!
