@@ -25,7 +25,6 @@ module.exports = class extends React.Component
       d.div do
         class-name: 'panel-heading'
         d.form do
-          class-name: 'form-inline'
           on-submit: -> it.prevent-default!
 
           d.div do
@@ -33,10 +32,10 @@ module.exports = class extends React.Component
 
             d.input do
               type: 'text'
+              auto-complete: 'off'
               class-name: 'form-control'
               id: 'search-query'
               name: 'query'
-              size: 60
               placeholder: 'Your search'
               value: @state.query
               on-change: ~> @set-state query: it.target.value

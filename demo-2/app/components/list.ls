@@ -25,6 +25,9 @@ module.exports = class extends React.Component
       d.div do
         class-name: 'panel-heading'
         d.form do
+          # FIXME
+          action: '/'
+          method: 'post'
           on-submit: (e) ~>
             e.prevent-default!
             query = @state.query
@@ -38,6 +41,7 @@ module.exports = class extends React.Component
 
             d.input do
               type: 'text'
+              auto-complete: 'off'
               class-name: 'form-control'
               id: 'search-query'
               name: 'query'
