@@ -1,6 +1,6 @@
-require! <[ reflex ]>
+require! <[ arch ]>
 
-d = reflex.DOM
+d = arch.DOM
 
 things =
   * "Hovercraft full of eels"

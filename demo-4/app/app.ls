@@ -1,5 +1,5 @@
 # module dependencies
-require! <[ reflex ]>
+require! <[ arch ]>
 global import require 'prelude-ls'
 
 # state observers
@@ -18,7 +18,7 @@ initial-state =
   history: []
   loading: false
 
-module.exports = reflex.application.create do
+module.exports = arch.application.create do
   get-initial-state: ->
     initial-state
 
@@ -29,8 +29,8 @@ module.exports = reflex.application.create do
       app-state.get 'state.loading'
 
   routes: ->
-    page = reflex.routes.page
+    page = arch.routes.page
 
-    reflex.routes.define do
+    arch.routes.define do
       page '/', welcome
       page '*', not-found

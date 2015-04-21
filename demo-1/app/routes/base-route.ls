@@ -21,4 +21,4 @@ module.exports = class extends React.Component
       html.replace '{body}', context.body .replace '{title}', context.title
 
   get-title: (title) ->
-    if title then "Reflex App | #{title}" else "Reflex Demo"
+    if title then "Arch App | #{title}" else "Arch App"

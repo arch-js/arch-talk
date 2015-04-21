@@ -1,6 +1,6 @@
-require! <[ reflex ]>
+require! <[ arch ]>
 
-d = reflex.DOM
+d = arch.DOM
 
 module.exports = class extends React.Component
   display-name: 'list'

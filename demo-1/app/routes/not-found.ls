@@ -1,7 +1,7 @@
-require! <[ reflex ./base-route ]>
-layout = reflex.dom require '../components/layout'
+require! <[ arch ./base-route ]>
+layout = arch.dom require '../components/layout'
 
-d = reflex.DOM
+d = arch.DOM
 
 module.exports = class extends base-route
   display-name: 'not-found'

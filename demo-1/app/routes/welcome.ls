@@ -1,9 +1,9 @@
-require! <[ reflex ./base-route ]>
+require! <[ arch ./base-route ]>
 
-layout = reflex.dom require '../components/layout'
-list = reflex.dom require '../components/list'
+layout = arch.dom require '../components/layout'
+list = arch.dom require '../components/list'
 
-d = reflex.DOM
+d = arch.DOM
 
 module.exports = class extends base-route
   display-name: 'welcome-page'
