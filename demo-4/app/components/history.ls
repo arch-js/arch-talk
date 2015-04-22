@@ -2,9 +2,7 @@ require! <[ arch ]>
 
 d = arch.DOM
 
-module.exports = class extends React.Component
-  display-name: 'list'
-
+module.exports = class History extends React.Component
   render: ->
     d.div do
       class-name: 'panel panel-default'

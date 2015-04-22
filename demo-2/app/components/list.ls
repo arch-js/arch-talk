@@ -12,11 +12,9 @@ things =
 matches = (search, item) -->
   search is '' or item.to-lower-case!.index-of(search.to-lower-case!) > -1
 
-module.exports = class extends React.Component
+module.exports = class List extends React.Component
   (props) ->
     @state = query: null
-
-  display-name: 'list'
 
   render: ->
     d.div do
