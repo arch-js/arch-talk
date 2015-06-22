@@ -1,8 +1,5 @@
 require! {'isomorphic-fetch': 'fetch'}
 
-matches = (search, item) -->
-  search is '' or item.to-lower-case!.index-of(search.to-lower-case!) > -1
-
 module.exports = (query, results, loading) ->
   loading.on-change ->
     # if (!arguments[0]) { return; };
